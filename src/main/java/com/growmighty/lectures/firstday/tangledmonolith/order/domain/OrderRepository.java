@@ -1,6 +1,12 @@
 package com.growmighty.lectures.firstday.tangledmonolith.order.domain;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+import java.util.Optional;
 
-public interface OrderRepository extends JpaRepository<Order, Long> {
+public interface OrderRepository {
+    Order save(Order order);
+
+    Optional<Order> findById(Long id);
+
+    List<Order> findAll();
 }
