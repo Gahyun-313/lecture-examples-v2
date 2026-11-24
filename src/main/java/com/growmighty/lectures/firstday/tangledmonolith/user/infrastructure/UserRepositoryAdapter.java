@@ -5,6 +5,8 @@ import com.growmighty.lectures.firstday.tangledmonolith.user.domain.UserReposito
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class UserRepositoryAdapter implements UserRepository {
@@ -13,5 +15,10 @@ public class UserRepositoryAdapter implements UserRepository {
     @Override
     public User save(final User user) {
         return jpaRepository.save(user);
+    }
+
+    @Override
+    public Optional<User> findById(final Long id) {
+        return jpaRepository.findById(id);
     }
 }
