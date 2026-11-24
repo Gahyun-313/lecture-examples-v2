@@ -1,5 +1,7 @@
-package com.growmighty.lectures.firstday.tangledmonolith.product;
+package com.growmighty.lectures.firstday.tangledmonolith.product.application;
 
+import com.growmighty.lectures.firstday.tangledmonolith.product.domain.Product;
+import com.growmighty.lectures.firstday.tangledmonolith.product.domain.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

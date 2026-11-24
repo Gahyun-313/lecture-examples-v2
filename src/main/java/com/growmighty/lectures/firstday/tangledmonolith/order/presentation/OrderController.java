@@ -1,5 +1,8 @@
-package com.growmighty.lectures.firstday.tangledmonolith.order;
+package com.growmighty.lectures.firstday.tangledmonolith.order.presentation;
 
+import com.growmighty.lectures.firstday.tangledmonolith.order.application.OrderService;
+import com.growmighty.lectures.firstday.tangledmonolith.order.application.dto.OrderConsistencyView;
+import com.growmighty.lectures.firstday.tangledmonolith.order.application.dto.OrderResult;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

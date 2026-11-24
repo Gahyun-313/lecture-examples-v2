@@ -1,5 +1,8 @@
-package com.growmighty.lectures.firstday.tangledmonolith.payment;
+package com.growmighty.lectures.firstday.tangledmonolith.payment.application;
 
+import com.growmighty.lectures.firstday.tangledmonolith.payment.domain.Payment;
+import com.growmighty.lectures.firstday.tangledmonolith.payment.domain.PaymentRepository;
+import com.growmighty.lectures.firstday.tangledmonolith.payment.domain.PaymentStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

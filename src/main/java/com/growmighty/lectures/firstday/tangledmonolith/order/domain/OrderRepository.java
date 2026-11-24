@@ -1,4 +1,4 @@
-package com.growmighty.lectures.firstday.tangledmonolith.order;
+package com.growmighty.lectures.firstday.tangledmonolith.order.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

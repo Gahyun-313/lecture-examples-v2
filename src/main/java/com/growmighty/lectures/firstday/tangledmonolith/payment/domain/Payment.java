@@ -1,4 +1,4 @@
-package com.growmighty.lectures.firstday.tangledmonolith.payment;
+package com.growmighty.lectures.firstday.tangledmonolith.payment.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

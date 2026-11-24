@@ -1,4 +1,4 @@
-package com.growmighty.lectures.firstday.tangledmonolith.cart;
+package com.growmighty.lectures.firstday.tangledmonolith.cart.domain;
 
 
 import jakarta.persistence.*;
