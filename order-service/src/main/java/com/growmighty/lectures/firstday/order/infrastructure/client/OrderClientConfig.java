@@ -9,9 +9,16 @@ import org.springframework.web.client.RestClient;
 public class OrderClientConfig {
 
     @Bean
-    RestClient orderRestClient(@Value("${order.client.base-url:http://localhost:8080}") String baseUrl) {
+    RestClient productRestClient(@Value("${order.client.product-base-url:http://localhost:8081}") String baseUrl) {
         return RestClient.builder()
-                .baseUrl(baseUrl)
-                .build();
+            .baseUrl(baseUrl)
+            .build();
+    }
+
+    @Bean
+    RestClient paymentRestClient(@Value("${order.client.payment-base-url:http://localhost:8082}") String baseUrl) {
+        return RestClient.builder()
+            .baseUrl(baseUrl)
+            .build();
     }
 }

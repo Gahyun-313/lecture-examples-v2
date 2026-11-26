@@ -15,11 +15,11 @@ import org.springframework.web.client.RestClient;
 @RequiredArgsConstructor
 public class ProductHttpClient implements ProductPort {
 
-    private final RestClient orderRestClient;
+    private final RestClient productRestClient;
 
     @Override
     public ProductSnapshot getProduct(Long productId) {
-        ApiResponseBody<ProductApiData> body = orderRestClient.get()
+        ApiResponseBody<ProductApiData> body = productRestClient.get()
                 .uri("/products/{productId}", productId)
                 .retrieve()
                 .body(new ParameterizedTypeReference<>() {
@@ -36,7 +36,7 @@ public class ProductHttpClient implements ProductPort {
 
     @Override
     public void decreaseStock(Long productId, int quantity) {
-        orderRestClient.post()
+        productRestClient.post()
                 .uri("/products/{productId}/decrease-stock", productId)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(new StockChangeBody(quantity))
@@ -46,7 +46,7 @@ public class ProductHttpClient implements ProductPort {
 
     @Override
     public void restoreStock(Long productId, int quantity) {
-        orderRestClient.post()
+        productRestClient.post()
                 .uri("/products/{productId}/restore-stock", productId)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(new StockChangeBody(quantity))

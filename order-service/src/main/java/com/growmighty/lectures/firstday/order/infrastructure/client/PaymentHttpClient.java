@@ -17,11 +17,11 @@ import java.math.BigDecimal;
 @RequiredArgsConstructor
 public class PaymentHttpClient implements PaymentPort {
 
-    private final RestClient orderRestClient;
+    private final RestClient paymentRestClient;
 
     @Override
     public PaymentResult pay(BigDecimal amount) {
-        ApiResponseBody<PaymentApiData> body = orderRestClient.post()
+        ApiResponseBody<PaymentApiData> body = paymentRestClient.post()
                 .uri("/payments")
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(new PayBody(amount))
@@ -35,7 +35,7 @@ public class PaymentHttpClient implements PaymentPort {
 
     @Override
     public void cancel(Long paymentId) {
-        orderRestClient.post()
+        paymentRestClient.post()
                 .uri("/payments/{paymentId}/cancel", paymentId)
                 .retrieve()
                 .toBodilessEntity();
